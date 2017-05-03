@@ -1,74 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Monster Slayer</title>
-    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/foundation.min.css">
-    <link rel="stylesheet" href="css/app.css">
-</head>
-<body>
-<div id="app">
-    <section class="row">
-        <div class="small-6 columns">
-            <h1 class="text-center">YOU</h1>
-            <div class="healthbar">
-                <div
-                    class="healthbar text-center"
-                    style="background-color: green; margin: 0; color: white;"
-                    :style="{width: playerHealth + '%'}">
-                    {{ playerHealth }}
-                </div>
-            </div>
-        </div>
-        <div class="small-6 columns">
-            <h1 class="text-center">MONSTER</h1>
-            <div class="healthbar">
-                <div
-                    class="healthbar text-center"
-                    style="background-color: green; margin: 0; color: white;"
-                    :style="{width: monsterHealth + '%'}">
-                    {{ monsterHealth }}
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="row controls" v-if="!gameStart">
-        <div class="small-12 columns">
-            <button id="start-game" @click="startGame">START NEW GAME</button>
-        </div>
-    </section>
-    <section class="row controls" v-else>
-        <div class="small-12 columns">
-            <button id="attack" @click="attack">ATTACK</button>
-            <div class="special-attack-power">
-
-            <div
-                class="special-attack-power power-bar"
-                style="margin: 0; color: black;"
-                :style="{width: specialAttackPoints + '%'}"
-                id="special-attack"
-                @click="specialAttack">
-                SPECIAL ATTACK
-            </div>
-        </div>
-            <button id="heal" @click="heal">HEAL</button>
-            <button id="give-up" @click="giveUp">GIVE UP</button>
-        </div>
-    </section>
-    <section class="row log">
-        <div class="small-12 columns">
-            <ul>
-                <li v-for="(activity, i) in activityLog" v-bind:class="[i%2===0 ? 'player-turn' : 'monster-turn']">
-                    {{ activity }}
-                </li>
-            </ul>
-        </div>
-    </section>
-</div>
-<script type="text/javascript" src="main.js">
-
-</script>
-</body>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" href="css/foundation.min.css">
+    <meta charset="utf-8">
+    <title>vue-monster</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
+  </body>
 </html>
